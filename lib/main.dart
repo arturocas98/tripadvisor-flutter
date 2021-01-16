@@ -30,9 +30,31 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Hola mundo feliz"),
         ),
-        body: Center(
-          child: Text("Hola mundo")
-        ),
+          body: Stack(
+            children: <Widget>[
+              Container(
+                child: Center(
+                  child: Image.network("https://r1.ilikewallpaper.net/iphone-x-wallpapers/download/78984/need-for-speed-heat-2019-4k-iphone-x-wallpaper-ilikewallpaper_com.jpg"),
+                ),
+              ),
+              Container(
+                child: Center(
+                  child: Container(
+                    child: Text('Reto flutter',style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                    ),
+
+                    color: Colors.black.withOpacity(0.4),
+                    alignment: Alignment.center,
+                    height: 30,
+                  ),
+                ),
+              )
+
+            ],
+          )
       ) ,
         //My home page viene por defecto
         //MyHomePage(title: 'Aplicación clon de tripadvisor')
