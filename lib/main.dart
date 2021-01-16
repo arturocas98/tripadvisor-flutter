@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tripadvisor_flutter/review_list.dart';
 import "descripcion_place.dart";
+import 'review_list.dart';
 void main() {
   runApp(MyApp());
 }
@@ -31,9 +33,11 @@ class MyApp extends StatelessWidget {
           title: Text("Tripadvisor")
 
         ),
-        body: new DescripcionPlace("Guayaquil",5, "Este es el mejor lugar que puedes visitar en "
+        /*body: new DescripcionPlace("Guayaquil",5, "Este es el mejor lugar que puedes visitar en "
             "tus vacaciones de verano, ven y disfruta de la mejor "
             "experiencia!"),
+        */
+        body: ReviewList(),
       )
 
         //My home page viene por defecto
