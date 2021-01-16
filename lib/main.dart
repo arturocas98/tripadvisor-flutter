@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import "descripcion_place.dart";
 void main() {
   runApp(MyApp());
 }
@@ -28,34 +28,14 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Hola mundo feliz"),
+          title: Text("Tripadvisor")
+
         ),
-          body: Stack(
-            children: <Widget>[
-              Container(
-                child: Center(
-                  child: Image.network("https://r1.ilikewallpaper.net/iphone-x-wallpapers/download/78984/need-for-speed-heat-2019-4k-iphone-x-wallpaper-ilikewallpaper_com.jpg"),
-                ),
-              ),
-              Container(
-                child: Center(
-                  child: Container(
-                    child: Text('Reto flutter',style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                    ),
+        body: new DescripcionPlace("Guayaquil",5, "Este es el mejor lugar que puedes visitar en "
+            "tus vacaciones de verano, ven y disfruta de la mejor "
+            "experiencia!"),
+      )
 
-                    color: Colors.black.withOpacity(0.4),
-                    alignment: Alignment.center,
-                    height: 30,
-                  ),
-                ),
-              )
-
-            ],
-          )
-      ) ,
         //My home page viene por defecto
         //MyHomePage(title: 'Aplicación clon de tripadvisor')
     );
