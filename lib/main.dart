@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tripadvisor_flutter/header_appbar.dart';
+import 'package:tripadvisor_flutter/platzi_trips.dart';
+import 'package:tripadvisor_flutter/platzi_trips_cupertino.dart';
 import 'package:tripadvisor_flutter/review_list.dart';
 import "descripcion_place.dart";
 import 'review_list.dart';
@@ -11,9 +13,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  String descriptionDummy = "Este es el mejor lugar que puedes visitar en "
-      "tus vacaciones de verano, ven y disfruta de la mejor "
-      "experiencia!";
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,25 +34,7 @@ class MyApp extends StatelessWidget {
           // closer together (more dense) than on mobile platforms.
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Scaffold(
-          /*body: new DescripcionPlace("Guayaquil",5, "Este es el mejor lugar que puedes visitar en "
-            "tus vacaciones de verano, ven y disfruta de la mejor "
-            "experiencia!"),
-        */
-          //body: ReviewList(),
-          body: Stack(
-            children: <Widget>[
-              ListView(
-                children: <Widget>[
-                  DescripcionPlace("Guayaquil", 4, descriptionDummy),
-                  ReviewList()
-
-                ],
-              ),
-              HeaderAppbar()
-            ],
-          ),
-        )
+        home: PlatziTripsCupertino()
 
         //My home page viene por defecto
         //MyHomePage(title: 'Aplicación clon de tripadvisor')
