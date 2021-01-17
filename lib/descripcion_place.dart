@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tripadvisor_flutter/button_navigate.dart';
 
 class DescripcionPlace extends StatelessWidget {
   String nombre_sitio;
@@ -68,7 +69,8 @@ class DescripcionPlace extends StatelessWidget {
       ],
     );
     return Column(
-      children: <Widget>[title_starts, descripcion],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[title_starts, descripcion,ButtonNavigate("Visitar")],
     );
     //return title_starts;
   }

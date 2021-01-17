@@ -1,48 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:tripadvisor_flutter/header_appbar.dart';
 import 'package:tripadvisor_flutter/review_list.dart';
 import "descripcion_place.dart";
 import 'review_list.dart';
+import 'gradient_back.dart';
+
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  String descriptionDummy = "Este es el mejor lugar que puedes visitar en "
+      "tus vacaciones de verano, ven y disfruta de la mejor "
+      "experiencia!";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tripadvisor',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Tripadvisor")
-
+        title: 'Tripadvisor',
+        theme: ThemeData(
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.blue,
+          // This makes the visual density adapt to the platform that you run
+          // the app on. For desktop platforms, the controls will be smaller and
+          // closer together (more dense) than on mobile platforms.
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        /*body: new DescripcionPlace("Guayaquil",5, "Este es el mejor lugar que puedes visitar en "
+        home: Scaffold(
+          /*body: new DescripcionPlace("Guayaquil",5, "Este es el mejor lugar que puedes visitar en "
             "tus vacaciones de verano, ven y disfruta de la mejor "
             "experiencia!"),
         */
-        body: ReviewList(),
-      )
+          //body: ReviewList(),
+          body: Stack(
+            children: <Widget>[
+              ListView(
+                children: <Widget>[
+                  DescripcionPlace("Guayaquil", 4, descriptionDummy),
+                  ReviewList()
+
+                ],
+              ),
+              HeaderAppbar()
+            ],
+          ),
+        )
 
         //My home page viene por defecto
         //MyHomePage(title: 'Aplicación clon de tripadvisor')
-    );
+        );
   }
 }
 
