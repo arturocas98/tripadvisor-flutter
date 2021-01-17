@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tripadvisor_flutter/floating_action_button.dart';
 
 class CardImage extends StatelessWidget{
   String path_image = "assets/img/guayaquil.jpg";
@@ -29,6 +30,13 @@ class CardImage extends StatelessWidget{
         ]
       ),
     );
-    return card;
+    return Stack(
+
+      alignment: Alignment(0.9,1.1),
+      children: <Widget>[
+        card,
+        FloatingActionButtonElement()
+      ],
+    );
   }
 }
